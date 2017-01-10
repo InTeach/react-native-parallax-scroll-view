@@ -256,7 +256,7 @@ class ParallaxScrollView extends Component {
                 // Adjust the bottom height so we can scroll the parallax header all the way up.
                 const { nativeEvent: { layout: { height } } } = e;
                 const footerHeight = Math.max(0, viewHeight - height - stickyHeaderHeight);
-                if (this._footerHeight !== footerHeight) {
+                if (this._footerHeight !== footerHeight && stickyHeaderHeight) {
                   this._footerComponent.setNativeProps({ style: { height: footerHeight }});
                   this._footerHeight = footerHeight;
                 }
