@@ -317,8 +317,6 @@ class ParallaxScrollView extends Component {
   }
 }
 
-ParallaxScrollView.propTypes = IPropTypes;
-
 ParallaxScrollView.defaultProps = {
   backgroundScrollSpeed: 5,
   backgroundColor: '#000',
