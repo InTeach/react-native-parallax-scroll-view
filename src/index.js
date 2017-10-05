@@ -9,7 +9,6 @@ import {
 
 const styles = require('./styles');
 
-const { bool, func, number, string } = React.PropTypes;
 
 const window = Dimensions.get('window');
 
@@ -26,24 +25,6 @@ const interpolate = (value, opts) => {
   const x = value.interpolate(opts);
   x.toJSON = () => x.__getValue();
   return x;
-};
-
-// Properties accepted by `ParallaxScrollView`.
-const IPropTypes = {
-  backgroundColor: string,
-  backgroundScrollSpeed: number,
-  fadeOutForeground: bool,
-  fadeOutBackground: bool,
-  contentBackgroundColor: string,
-  onChangeHeaderVisibility: func,
-  parallaxHeaderHeight: number.isRequired,
-  renderBackground: func,
-  renderFixedHeader: func,
-  renderForeground: func,
-  renderScrollComponent: func,
-  renderStickyHeader: func,
-  stickyHeaderHeight: number,
-  contentContainerStyle: View.propTypes.style
 };
 
 class ParallaxScrollView extends Component {
