@@ -3,8 +3,7 @@ import {
   Animated,
   Dimensions,
   ScrollView,
-  View,
-  Platform
+  View
 } from 'react-native';
 
 const styles = require('./styles');
@@ -256,6 +255,7 @@ class ParallaxScrollView extends Component {
 
   _maybeRenderStickyHeader({ parallaxHeaderHeight, stickyHeaderHeight, backgroundColor, renderFixedHeader, renderStickyHeader }) {
     const { viewWidth, scrollY } = this.state;
+    console.log('scrollY', scrollY)
     if (renderStickyHeader || renderFixedHeader) {
       const p = pivotPoint(parallaxHeaderHeight, stickyHeaderHeight);
       return (
@@ -273,7 +273,7 @@ class ParallaxScrollView extends Component {
                     extrapolate: 'clamp'
                   })
                 }}>
-                  <Animated.View
+                  {/*<Animated.View
                     style={{
                     transform: [{
                       translateY: interpolate(scrollY, {
@@ -282,9 +282,10 @@ class ParallaxScrollView extends Component {
                         extrapolate: 'clamp'
                       })
                     }]
-                  }}>
+                  }}>*/}
+                 
                     { renderStickyHeader() }
-                  </Animated.View>
+                  {/*</Animated.View>*/}
                 </Animated.View>
               )
               : null
